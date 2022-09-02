@@ -140,8 +140,8 @@ header {
 
 }
 
-.sidebar .show-menu{
-    right:0 ;
+.show-menu .sidebar {
+    right: 0;
 }
 
 .menu {
