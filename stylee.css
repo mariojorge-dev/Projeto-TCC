@@ -1,22 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@200&family=Baloo+2:wght@400;500;600;700&family=Baloo+Da+2&family=Josefin+Slab:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Mulish:ital,wght@0,200;0,300;1,300&family=Nanum+Gothic:wght@400;700&family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Mulish:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap');
 
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
 
 * {
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
-
 }
 
 :root {
-    --font1: "Anek Telugu", serif;
-    --font2: "Nanum Gothic", serif;
-    --font3: "Mulish", serif;
+    --font-primary: "Baloo Da 2", serif;
+    --font-secundary: "Josefin Slab", serif;
+    --font-action:  "Mulish", serif;
 }
-
 .hamburguer {
+   /* background-color: red; */
     width: 2rem;
     height: 2rem;
     position: fixed;
@@ -27,16 +25,20 @@
     flex-direction: column;
     justify-content: space-evenly;
     cursor: pointer;
+    transition: 1.5s;
+    
 }
 
+.show-menu .hamburguer{
+    right: 16rem;
+}
 .line {
     width: 100%;
     height: .1rem;
     background-color: #fff;
-    box-shadow: 0.1rem 0.1rem 1px black;
+    box-shadow: 0.1rem 0.1rem 1px #000;
 
 }
-
 header {
     width: 100%;
     height: 100vh;
@@ -48,22 +50,21 @@ header {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba( 0, 0, 0, .8);
 }
 
 .img-wrapper img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.5;
-    animation: zoom 10s;
+    opacity: .5;
+    animation: zoom 25s;
 }
 
 @keyframes zoom {
     0% {
         transform: scale(1.3);
     }
-
     100% {
         transform: scale(1);
     }
@@ -76,58 +77,51 @@ header {
 }
 
 .banner h1 {
-    color: #ffffff;
-    font-size: 3rem;
-    font-family: var(--font1);
+    color: #fff;
+    font-size: 3.5rem;
+    font-family: var(--font-primary);
     font-weight: 200;
-    text-shadow: .2rem .3rem 2px rgba(0, 0, 0, 0.4);
+    text-shadow: .3rem .4rem 2px rgba(0, 0, 0, .4);
     line-height: 3.5rem;
     margin-bottom: 2rem;
     opacity: 0;
-    animation: moveBanner 2s 0.5s forwards;
+    animation: moveBanner 1s 0.5s forwards;
 }
 
 .banner p {
-    font-family: var(--font2);
+    font-family: var(--font-secundary);
     color: #fff;
-    font-size: 1.5rem;
-    text-shadow: .1rem .1rem 1px rgba(0, 0, 0, 0.4);
+    font-size: 2rem;
+    text-shadow: .2rem .2rem rgba(0, 0, 0, .4);
     margin-bottom: 2rem;
     opacity: 0;
-    animation: moveBanner 2s 0.7s forwards;
+    animation: moveBanner 1s 0.7s forwards;
 }
 
 .banner button {
-    font-family: var(--font3);
+    font-family: var(--font-action);
     color: #fff;
+    text-transform: uppercase;
     letter-spacing: .1rem;
-    font-size: 1.2rem;
-    background: #7F00FF;
-    background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);
-    background: linear-gradient(to right, #E100FF, #7F00FF);
+    background: #6a3093;  
+    background: -webkit-linear-gradient(to right, #a044ff, #6a3093);  
+    background: linear-gradient(to left, #a044ff, #6a3093);
     padding: 1rem 3rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     opacity: 0;
-    animation: moveBanner 2s 0.9s forwards;
-}
-
-.banner button:hover {
-    opacity: 0.9;
-    columns: #000;
+    animation: moveBanner 1s 0.9s forwards;
 }
 
 @keyframes moveBanner {
     0% {
         transform: translateY(10rem) rotateY(-30deg);
     }
-
     100% {
         transform: translateY(0) rotateY(0);
         opacity: 1;
     }
-
 }
 
 .sidebar {
@@ -137,57 +131,37 @@ header {
     position: fixed;
     top: 0;
     right: -20rem;
-
+    transition: all 1s;
 }
 
-.sidebar .show-menu{
-    right:0 ;
+.show-menu .sidebar {
+    right: 0;
 }
 
 .menu {
+    position: absolute;
     top: 40%;
-    left: 34%;
-    transform: translate(2%, 130%);
-    font-size: 2rem;
-    color: #555;
-    text-align: center;
-}
-.show-menu #line1{
-position: relative;
-transform:  rotate(50deg);
-left: 9px;
-}
-
-.show-menu #line2{
-position: relative;
-transform: rotate(126deg) ;
-margin-bottom: 10px;
-left: 9px;
-bottom: 7px;
-}
-
-.show-menu #line3{
-opacity: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .menu-item {
     text-align: center;
     margin-bottom: .5rem;
-
 }
 
 .menu-link {
-    font-family: var(--font1);
+    font-family: var(--font-action);
     font-size: 2rem;
     color: #555;
     transition: color 1s;
 }
 
-.menu-link:hover{
-    color: #7F00FF;
+.menu-link:hover {
+    color: #a044ff ;
 }
 
-.social-media{
+.social-media {
     position: absolute;
     bottom: 2rem;
     width: 100%;
@@ -195,18 +169,26 @@ opacity: 0;
     justify-content: space-evenly;
 }
 
-.social-media i{
-    background-color: #6a3093;
+.social-media i {
+    background-color: #000 ;
     color: rgba(255, 255, 255, 1);
     height: 2.5rem;
     width: 2.5rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     transition: background-color 1s;
 }
-.social-media i:hover{
+
+.social-media i:hover {
     background-color: #a044ff;
 }
+
+
+.show-menu .sidebar {
+    right: 0;
+}
+
+
