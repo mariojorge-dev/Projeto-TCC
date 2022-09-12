@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@200&family=Baloo+2:wght@400;500;600;700&family=Baloo+Da+2&family=Josefin+Slab:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Mulish:ital,wght@0,200;0,300;1,300&family=Nanum+Gothic:wght@400;700&family=Sriracha&display=swap');
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
-
+/*color 
+7776bc
+cdc7e5
+4b244a
+bee7b8
+*/
 * {
     margin: 0;
     padding: 0;
@@ -381,8 +386,8 @@ margin-bottom: 1.1rem;
         flex-direction: column;
         overflow: scroll;
         flex-wrap: nowrap;
-        /*max-height:10rem ;
-        scroll*/
+        max-height:10rem ;
+        
         padding-right: 5rem;
     }
     .gender-inputs {
