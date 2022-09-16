@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@200&family=Baloo+2:wght@400;500;600;700&family=Baloo+Da+2&family=Josefin+Slab:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Mulish:ital,wght@0,200;0,300;1,300&family=Nanum+Gothic:wght@400;700&family=Sriracha&display=swap');
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+
 /*color 
 7776bc
 cdc7e5
@@ -34,7 +35,7 @@ bee7b8
     cursor: pointer;
 }
 
-.hamburguer.show-menu{
+.show-menu .hamburguer{
     right: 16rem;
 }
 
@@ -43,8 +44,50 @@ bee7b8
     height: .1rem;
     background-color: #fff;
     box-shadow: 0.1rem 0.1rem 1px black;
+    transition: transform 1s;
+}
+
+.show-menu #line1 {
+    transform: rotate(45deg) translate(.3rem, .45rem);
+}
+
+.show-menu #line2 {
+    transform: rotate(-45deg) translate(.3rem, -.45rem);
 
 }
+
+.show-menu #line3 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.hamburguer span{
+    position: absolute;
+    left: 3rem;
+    height: 2rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7F00FF;
+    color: #ffffff;
+    font-family: var(--font2);
+    opacity: 0;
+}
+
+.hamburguer span::before {
+    content: "";
+    position: absolute;
+    border-right: 0.5rem solid #7F00FF;
+    border-top: 0.5rem solid transparent;
+    border-left: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid transparent;
+    left: -1rem;
+  }
+
+.show-menu .hamburguer:hover span {
+    opacity: 1;
+  }
 
 header {
     width: 100%;
@@ -146,7 +189,7 @@ header {
     position: fixed;
     top: 0;
     right: -20rem;
-    transition: all;
+    transition: all 1s;
 }
 
 .show-menu .sidebar {
@@ -161,22 +204,23 @@ header {
     color: #555;
     text-align: center;
 }
-.show-menu #line1{
-position: relative;
-transform:  rotate(50deg);
-left: 9px;
+
+.show-menu #line1 {
+    position: relative;
+    transform: rotate(50deg);
+    left: 9px;
 }
 
-.show-menu #line2{
-position: relative;
-transform: rotate(126deg) ;
-margin-bottom: 10px;
-left: 9px;
-bottom: 7px;
+.show-menu #line2 {
+    position: relative;
+    transform: rotate(126deg);
+    margin-bottom: 10px;
+    left: 9px;
+    bottom: 7px;
 }
 
-.show-menu #line3{
-opacity: 0;
+.show-menu #line3 {
+    opacity: 0;
 }
 
 .menu-item {
@@ -192,11 +236,11 @@ opacity: 0;
     transition: color 1s;
 }
 
-.menu-link:hover{
+.menu-link:hover {
     color: #7F00FF;
 }
 
-.social-media{
+.social-media {
     position: absolute;
     bottom: 2rem;
     width: 100%;
@@ -204,7 +248,7 @@ opacity: 0;
     justify-content: space-evenly;
 }
 
-.social-media i{
+.social-media i {
     background-color: #6a3093;
     color: rgba(255, 255, 255, 1);
     height: 2.5rem;
@@ -216,7 +260,8 @@ opacity: 0;
     border-radius: 50%;
     transition: background-color 1s;
 }
-.social-media i:hover{
+
+.social-media i:hover {
     background-color: #a044ff;
 }
 
@@ -227,7 +272,7 @@ opacity: 0;
 
 /* TELA DE CADASTRO*/
 
-body{
+body {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -236,14 +281,14 @@ body{
     background: #6a3093;
 }
 
-.container{
+.container {
     width: 80%;
     height: 80vh;
     display: flex;
     box-shadow: 5px 5px 5px 10px rgba(0, 0, 0, .212);
 }
 
-.form-image{
+.form-image {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -252,7 +297,7 @@ body{
     padding: 1rem;
 }
 
-.form-image img{
+.form-image img {
     width: 31rem;
 }
 
@@ -284,17 +329,18 @@ body{
     border-radius: 10px;
 }
 
-.input-group{
+.input-group {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 1rem;
-    
+
 }
+
 .input-box {
-display: flex;
-flex-direction: column;
-margin-bottom: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.1rem;
 
 }
 
@@ -304,8 +350,9 @@ margin-bottom: 1.1rem;
     border: none;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
-    
+
 }
+
 .input-box input:hover {
     background-color: #eeeeee75;
 }
@@ -313,6 +360,7 @@ margin-bottom: 1.1rem;
 .input-box input:focus-visible {
     outline: 1px solid #7F00FF;
 }
+
 .input-box label,
 .gender-title h6 {
     font-size: 0.75rem;
@@ -320,40 +368,43 @@ margin-bottom: 1.1rem;
     color: 000000c0;
 }
 
-.input-box input::placeholder{
+.input-box input::placeholder {
     color: #000000be;
     text-align: left;
 }
- #cep{
+
+#cep {
     margin: 0.6rem 15;
     padding: 0.8rem rem;
- }
- #num{
-    width: 25px;
- }
+}
 
- .gender-group {
+#num {
+    width: 25px;
+}
+
+.gender-group {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     margin-top: 0.6rem;
     padding: 0 0.5rem;
- }
+}
 
- .gender-input{
+.gender-input {
     display: flex;
     align-items: center;
- }
+}
 
- .gender-input input {
+.gender-input input {
     margin-right: 0.35rem;
- }
- .gender-input label {
+}
+
+.gender-input label {
     font-size: 1rem;
     font-weight: 600;
     color: #000000c0;
- }
+}
 
- .continue-button button {
+.continue-button button {
     width: 100%;
     margin-top: 2.5rem;
     border: none;
@@ -361,51 +412,57 @@ margin-bottom: 1.1rem;
     padding: 0.62rem;
     border-radius: 5px;
     cursor: pointer;
- }
+}
 
- .continue-button button:hover {
+.continue-button button:hover {
     background-color: #a044ff;
- }
+}
 
- .continue-button button a {
-    text-decoration:none;
+.continue-button button a {
+    text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
     color: #fff;
- }
+}
 
- @media screen and (max-width: 1330px) {
-    .form-image{
+@media screen and (max-width: 1330px) {
+    .form-image {
         display: none;
     }
-    .container{
-       width: 50%;
+
+    .container {
+        width: 50%;
     }
+
     .form {
         width: 100%;
     }
- }
+}
 
- @media screen and (max-width:1064px) {
-    .container{
+@media screen and (max-width:1064px) {
+    .container {
         width: 90%;
         height: auto;
     }
+
     .input-group {
         flex-direction: column;
         overflow: scroll;
         flex-wrap: nowrap;
-        max-height:10rem ;
-        
+        max-height: 10rem;
+
         padding-right: 5rem;
     }
+
     .gender-inputs {
         margin-top: 2rem;
     }
+
     .gender-group {
         flex-direction: column;
     }
-    .gender-input{
+
+    .gender-input {
         margin-top: 0.5rem;
     }
- }
+}
