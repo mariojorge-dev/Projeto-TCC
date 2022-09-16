@@ -12,15 +12,11 @@
 <body>
     <div class="container">
         <div class="form-image">
-            <img src="img/undraw_Engineering_team_a7n2.png" alt="">
+            <img src="img/undraw_shopping_re_3wst.svg" alt="">
         </div>
         <div class="form">
-            <div class="voltar-button">
-                <button><a href="index.html">Voltar</a> </button>
-            </div>
             <form action="#">
                 <div class="form-header">
-
                     <div class="title">
                         <h1>Reservar</h1>
                     </div>
@@ -40,27 +36,31 @@
                         <label for="data">Data</label>
                         <input type="date" class="form-control date-time-mask">
                     </div>
-
                     <div class="input-box">
+                        <div class="input-box">
 
-                        <label for="horaini">Horario inicio</label>
-
-                        <input type="time" id="apptini" name="apptin" min="09:00" max="22:00" required>
+                            <label for="horaini">Horario inicio</label>
+    
+                            <input type="time" id="appt" name="appt" min="09:00" max="22:00" required>
+    
+                            <label for="horafim">Horario termino</label>
+    
+                            <input type="time" id="appt" name="appt" min="09:00" max="22:00" required>
+    
                     </div>
-                    <div class="input-box">
-                        <label for="horafim">Horario termino</label>
 
-                        <input type="time" id="apptfim" name="apptfi" min="09:00" max="22:00" required>
+
+                </div>
+
                     </div>
                 </div>
+
                 <div class="continue-button">
                     <button><a href="#">Continuar</a> </button>
                 </div>
-
+            </form>
         </div>
     </div>
-
-    </form>
 </body>
 <script src="script.js"></script>
 
