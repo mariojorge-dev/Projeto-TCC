@@ -1,3 +1,34 @@
+<?php
+    $error = "";
+    if(isset($_POST['registrar'])){
+        $nome = $_POST['fullname'];
+        $cel = $_POST['number'];
+        $cpf = $_POST['cpf'];
+        $email = $_POST['address'];
+        $endereco = $_POST['endereco'];
+        $numero = $_POST['num'];
+        $cep = $_POST['cep'];
+        $genero = $_POST['gender'];
+
+        $verify = mysql_query("select * from cliente where email = '$email'");
+
+
+        if(strlen($nome) < 3){
+            $error = "<h2 style='color;red'>Nome muito pequeno</h2>";
+        }else if(strlen($email) < 8){
+            $error = "<h2 style='color;red'>Email muito pequeno</h2>";
+        }else if(strlen($cpf) < 11){
+            $error = "<h2 style='color;red'>CPF incorreto</h2>";
+        }else if(strlen($endereco) < 5){
+            $error = "<h2 style='color;red'>CPF incorreto</h2>";
+        }else if(mysql_num_rows($verify) > 0){
+            $error = "<h2 style='color;red'>Email já registrado</h2>";
+        }else{
+            mysql_query("INSERT cliente (fullname,number,cpf,address,endereco,num,cep,gender,datacad) VALUES ('$nome','$cel','$cpf','$email','$endereco','$numero','$cep','$genero',NOW()");
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,6 +39,10 @@
     <title>Cadastro do Cliente</title>
 </head>
 <body>
+    <?php
+    echo $error;
+    ?>
+    <form action="cadastrar.php"></form>
     <div class="container">
         <div class="form-image">
             <img src="img/undraw_exams_re_4ios.svg" alt="">
@@ -15,7 +50,7 @@
         <div class="form">
             <div class="voltar-button">
                 <button><a href="index.html">Voltar</a> </button>
-            </div>
+            </div>  
             <form action="#">
                 <div class="form-header">
                     <div class="title">
@@ -68,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="continue-button">
+                <div class="continue-button" name="registrar">
                     <button><a href="#">continuar</a></button>
                 </div>
             </form>

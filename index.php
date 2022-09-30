@@ -1,3 +1,6 @@
+<?php
+  include("conexao.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -41,8 +44,8 @@
     <aside class="sidebar">
       <nav>
         <ul class="menu">
-          <li class="menu-item"><a href="index.html" class="menu-link">Home</a></li>
-          <li class="menu-item"><a href="cadastro.html" rel="next" target="_self" class="menu-link">Cadastro</a></li>
+          <li class="menu-item"><a href="index.php" class="menu-link">Home</a></li>
+          <li class="menu-item"><a href="cadastro.php" rel="next" target="_self" class="menu-link">Cadastro</a></li>
           <li class="menu-item"><a href="reserva.html" class="menu-link">Reservar</a></li>
           <li class="menu-item"><a href="#historico" class="menu-link">Histórico</a></li>
           <li class="menu-item"><a href="#financeniro" class="menu-link">Financeiro</a></li>
