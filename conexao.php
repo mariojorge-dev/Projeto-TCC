@@ -1,8 +1,26 @@
 <?php
-define('HOST', 'localhost');
-define('USUARIO', 'root');
-define('SENHA', '');
-define('DB', 'mydb');
+$dbHost = 'Localhost';
+$dbUsername = 'root';
+$dbPassword = '';
+$dbName = 'mydb';
 
-$conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('Não foi possível conectar');
+$conexao = new mysqli($dbHost,$dbUsername,$dbPassword);
+/*
+if($conexao->connect_errno){
+    echo "Erro";
+}else{
+    echo "SUCESSO";
+}
+*/
 ?>
+
+<?php
+/*
+function mostra_data($data){
+    $d = explode('-', $data);
+    $escreve = $d[0] ."/" .$d[1] . "/" .$d[2];
+    return $escreve;
+}
+*/
+?>
+
